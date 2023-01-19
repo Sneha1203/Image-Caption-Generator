@@ -1,4 +1,3 @@
-from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from webapp.forms import UserImageForm
 from webapp.models import UploadImage
@@ -9,8 +8,6 @@ def home(request):
         if form.is_valid():
             form.save()
             img_object = form.instance
-            return render(request, 'home.html', {'form': form, 'img_obj': img_object})
-    else:
-        form = UserImageForm()
-
+        return render(request, 'home.html', {'form': form, 'img_obj': img_object})
+    form = UserImageForm()
     return render(request, 'home.html', {'form': form})

@@ -3,7 +3,7 @@ from django.forms import fields
 from .models import UploadImage
 from django import forms
 
-class UserImageForm(forms.Form):
+class UserImageForm(forms.ModelForm):
     class Meta:
-        models = UploadImage
+        model = UploadImage
         fields = '__all__'
