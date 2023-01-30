@@ -52,10 +52,6 @@ def generate_caption(filename):
     xception_model = Xception(include_top=False, pooling='avg')
 
     photo = extract_features(filename, xception_model)
-    # img = Image.open(filename)
     description = generate_desc(model, tokenizer, photo, max_length)
     return description
-# print('\n\n')
-# print(description)
-# plt.imshow(img)
 
