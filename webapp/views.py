@@ -52,7 +52,7 @@ def generate_desc(model, tokenizer, photo, max_length):
 
 def generate_caption(filename):
     max_length = 32
-    tokenizer = load(open('tokenizer.pkl', 'rb'))
+    tokenizer = load(open('tokenizer.p', 'rb'))
     model = load_model('models/model_9.h5')
     xception_model = Xception(include_top=False, pooling='avg')
     # img_path = 'media/images' + '/' + filename
